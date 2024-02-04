@@ -1,0 +1,190 @@
+/* Base Styles */
+:root {
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #fce4ec; /* Light pink background */
+    color: #880e4f; /* Dark pink text color */
+    padding-bottom: 3rem;
+}
+
+img {
+    display: block;
+    cursor: pointer; /* Change mouse pointer to hand */
+}
+
+ul {
+    cursor: pointer; /* Change mouse pointer to hand for lists */
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff; /* White header background */
+    border-bottom: 1px solid #dbdbdb;
+    padding: 2rem 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 110rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin-right: 4rem;
+}
+
+.profile-user-settings {
+    flex: 1;
+}
+
+.profile-user-name {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #dbdbdb;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #dbdbdb;
+}
+
+.profile-stats ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.profile-stats li {
+    margin-right: 4rem;
+    font-size: 1.6rem;
+}
+
+/* Main Styles */
+main {
+    padding: 4rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(136, 14, 79, 0.1); /* Dark pink shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem rgba(136, 14, 79, 0.2); /* Dark pink shadow on hover */
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer; /* Change mouse pointer to hand for images */
+}
+
+.gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 1rem;
+    color: #880e4f; /* Dark pink text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-item-info ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.gallery-item-info li {
+    margin-right: 1rem;
+    font-size: 1.4rem;
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #880e4f; /* Dark pink text color */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Loader Styles */
+.loader {
+    margin: 4rem auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #880e4f; /* Dark pink border color */
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        margin-bottom: 2rem;
+    }
+
+    .profile-user-settings {
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+}
